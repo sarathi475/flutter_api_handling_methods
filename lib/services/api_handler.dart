@@ -3,7 +3,7 @@ import 'dart:convert' as convert;
 import 'package:http/http.dart' as http;
 
 class APIHandler {
-  String getUrl = 'https://reqres.in/api2/users?page=2';
+  String getUrl = 'https://reqres.in/api/users?page=2';
   Future get() async {
     var client = http.Client();
     http.Response response = await client.get(Uri.parse(getUrl));

@@ -43,14 +43,14 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void _getinformation() async {
     var userInfo = await apiHandler.get().catchError((error) => {});
-    print("response : ${userInfo}");
+    // print("response : ${userInfo}");
 
     if (userInfo != null && userInfo != "{}") {
       var decode = jsonDecode(userInfo)["data"];
       setState(() {
         userlist = userFromJson(decode);
       });
-      print(userlist.length);
+      // print(userlist.length);
     }
   }
 
