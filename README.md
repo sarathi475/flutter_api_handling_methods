@@ -1,16 +1,34 @@
 # flutter_api_handling_methods
 
-A new Flutter project.
+flutter api handling methods samples
 
-## Getting Started
+## FrameWork
+1. Flutter
 
-This project is a starting point for a Flutter application.
+## Language:
+1. Dart
 
-A few resources to get you started if this is your first Flutter project:
+## Tools:
+1. Git
+2. Android studio / Vscode
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Pre-requirement:
+1. Flutter 3.3.10
+2. Dart 2.18.6
+3. http: ^0.13.5
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+# Cli command
+## check your flutter support info:
+
+```
+flutter doctor
+```
+## dependancy install / package install:
+```
+flutter pub get
+```
+## Run methods:
+```
+flutter run
+```
