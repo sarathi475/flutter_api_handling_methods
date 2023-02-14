@@ -32,3 +32,9 @@ flutter pub get
 ```
 flutter run
 ```
+
+### ✌&ensp;Preview
+
+|            Gif preview             |           api informatation           |
+|:----------------------------------:|:-------------------------------------:|
+| <img src="sample.gif" width="350"> | <img src="user_info.png" width="350"> |

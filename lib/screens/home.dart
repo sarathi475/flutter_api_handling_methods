@@ -3,9 +3,9 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_api_handling_methods/widgets/card_design.dart';
-import 'package:flutter_api_handling_methods/constant.dart';
 import 'package:flutter_api_handling_methods/models/user_model.dart';
 import 'package:flutter_api_handling_methods/services/api_handler.dart';
+import 'package:shimmer/shimmer.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -33,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Timer(Duration(seconds: 5), () {
+    Timer(const Duration(seconds: 5), () {
       setState(() {
         _loading = false;
       });
@@ -63,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: _loading
           ? CustomLoader()
-          : userlist.length == 0
+          : userlist.isEmpty
               ? Container(
                   child: Center(
                     child: Text("There is no user information"),
@@ -112,12 +112,7 @@ class LoaderStuct extends StatelessWidget {
       decoration: BoxDecoration(),
       child: Row(
         children: [
-          Container(
-            width: 60,
-            height: 60,
-            decoration: BoxDecoration(
-                color: Colors.black12, borderRadius: BorderRadius.circular(6)),
-          ),
+          Skelton(height: 60, weight: 60),
           Expanded(
               child: Container(
             padding: EdgeInsets.symmetric(horizontal: 10),
@@ -152,12 +147,16 @@ class Skelton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: height,
-      width: weight,
-      decoration: BoxDecoration(
-          color: Colors.black.withOpacity(0.04),
-          borderRadius: BorderRadius.circular(16)),
+    return Shimmer.fromColors(
+      baseColor: Colors.black,
+      highlightColor: Colors.white,
+      child: Container(
+        height: height,
+        width: weight,
+        decoration: BoxDecoration(
+            color: Colors.black.withOpacity(0.04),
+            borderRadius: BorderRadius.circular(16)),
+      ),
     );
   }
 }
